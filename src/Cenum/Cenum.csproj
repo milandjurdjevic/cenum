@@ -2,13 +2,15 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <IsPackable>false</IsPackable>
         <Nullable>enable</Nullable>
         <LangVersion>latest</LangVersion>
-
         <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
         <IsRoslynComponent>true</IsRoslynComponent>
         <ImplicitUsings>enable</ImplicitUsings>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <PackageId>Cenum</PackageId>
+        <RootNamespace>Cenum</RootNamespace>
+        <Description>An implementation of a type safe and object oriented alternative to C# enum.</Description>
     </PropertyGroup>
 
     <ItemGroup>
@@ -19,6 +21,9 @@
         <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.6.0"/>
         <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.6.0"/>
     </ItemGroup>
-
+    
+    <ItemGroup>
+        <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false"/>
+    </ItemGroup>
 
 </Project>

@@ -6,7 +6,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Cenum;
 
-[Generator]
+[Generator(LanguageNames.CSharp)]
 public class Generator : IIncrementalGenerator
 {
     public void Initialize(IncrementalGeneratorInitializationContext context)
