@@ -1,5 +1,3 @@
-using System.Runtime.CompilerServices;
-
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 
@@ -33,6 +31,15 @@ public class GeneratorTests
                 {
                     public static readonly NonPartialEnumerationClass One = new();
                 }
+                
+                public class EnumerationWrapperClass
+                {
+                    [Enumeration]
+                    public partial class EnumerationNestedClass
+                    {
+                        public static readonly EnumerationInnerClass One = new();
+                    }
+                }
             }
 
             [Enumeration]
@@ -52,7 +59,4 @@ public class GeneratorTests
 
         return Verify(driver);
     }
-
-    [ModuleInitializer]
-    internal static void Initialize() => VerifySourceGenerators.Initialize();
 }

@@ -18,16 +18,14 @@ public class Generator : IIncrementalGenerator
         context.RegisterSourceOutput(syntaxProvider, GenerateSourceOutput);
     }
 
-    private static Enumeration Transform(GeneratorAttributeSyntaxContext context, CancellationToken token)
-    {
-        var symbol = (ITypeSymbol)context.TargetSymbol;
-        return new Enumeration(symbol);
-    }
+    private static Enumeration Transform(GeneratorAttributeSyntaxContext context, CancellationToken token) =>
+        new((ITypeSymbol)context.TargetSymbol);
 
     private static bool Filter(SyntaxNode node, CancellationToken token) =>
-        node is ClassDeclarationSyntax classDeclarationSyntax &&
-        classDeclarationSyntax.Modifiers.Any(SyntaxKind.PartialKeyword) &&
-        !classDeclarationSyntax.Modifiers.Any(SyntaxKind.StaticKeyword);
+        node is ClassDeclarationSyntax classDeclaration &&
+        classDeclaration.Modifiers.Any(SyntaxKind.PartialKeyword) &&
+        !classDeclaration.Modifiers.Any(SyntaxKind.StaticKeyword) &&
+        classDeclaration.Parent is not ClassDeclarationSyntax;
 
     private static void GeneratePostInitOutput(IncrementalGeneratorPostInitializationContext context) =>
         context.AddSource(Marker.Default.HintName, Marker.Default.ToString());
