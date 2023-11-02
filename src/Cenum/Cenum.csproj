@@ -16,6 +16,7 @@
         <MinVerTagPrefix>v</MinVerTagPrefix>
         <PackageTags>enumeration;enum;ddd;oop;csharp;generator</PackageTags>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
 
     <ItemGroup>
