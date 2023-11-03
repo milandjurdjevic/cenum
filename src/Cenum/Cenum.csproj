@@ -1,8 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <Authors>Milan Durdjevic</Authors>
-        <Copyright>Copyright (c) 2023 Milan Djurdjevic</Copyright>
         <TargetFramework>netstandard2.0</TargetFramework>
         <Nullable>enable</Nullable>
         <LangVersion>latest</LangVersion>
@@ -13,10 +11,8 @@
         <PackageId>Cenum</PackageId>
         <RootNamespace>Cenum</RootNamespace>
         <Description>An implementation of a type safe and object oriented alternative to C# enum.</Description>
-        <MinVerTagPrefix>v</MinVerTagPrefix>
         <PackageTags>enumeration;enum;ddd;oop;csharp;generator</PackageTags>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
