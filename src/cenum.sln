@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cenum", "Cenum\Cenum.csproj", "{D32F0E66-6456-4895-87E0-4C504B0AEE4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cenum.Tests", "Cenum.Tests\Cenum.Tests.csproj", "{D596C134-8E24-44DF-ACF9-6DEA264C6D20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cenum.Benchmarks", "Cenum.Benchmarks\Cenum.Benchmarks.csproj", "{6F84ED40-CD08-48AF-B767-A350036DFAD5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D32F0E66-6456-4895-87E0-4C504B0AEE4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D32F0E66-6456-4895-87E0-4C504B0AEE4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D32F0E66-6456-4895-87E0-4C504B0AEE4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D32F0E66-6456-4895-87E0-4C504B0AEE4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D596C134-8E24-44DF-ACF9-6DEA264C6D20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D596C134-8E24-44DF-ACF9-6DEA264C6D20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D596C134-8E24-44DF-ACF9-6DEA264C6D20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D596C134-8E24-44DF-ACF9-6DEA264C6D20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F84ED40-CD08-48AF-B767-A350036DFAD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F84ED40-CD08-48AF-B767-A350036DFAD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F84ED40-CD08-48AF-B767-A350036DFAD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F84ED40-CD08-48AF-B767-A350036DFAD5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
