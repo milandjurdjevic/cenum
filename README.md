@@ -1,5 +1,7 @@
-# Cenum
-An implementation of a **type safe & object oriented** alternative to **C# enum**.
+
+![logo](logo.png)
+
+## Cenum - object oriented alternative to C# enum
 
 ### Background
 
