@@ -9,7 +9,7 @@ public class GeneratorTests
     [Fact]
     public Task GeneratesExpectedSourceCode()
     {
-        var syntaxTree = CSharpSyntaxTree.ParseText(
+        SyntaxTree syntaxTree = CSharpSyntaxTree.ParseText(
             """
             using Cenum;
 
@@ -55,7 +55,7 @@ public class GeneratorTests
             {
                 public static readonly GlobalEnumerationClass One = new();
             }
-            
+
             [Enumeration]
             internal partial class InternalGlobalEnumerationClass
             {
@@ -66,12 +66,12 @@ public class GeneratorTests
             """);
 
 
-        var compilation = CSharpCompilation.Create(nameof(GeneratorTests),
+        CSharpCompilation compilation = CSharpCompilation.Create(nameof(GeneratorTests),
             new[] { syntaxTree },
             new[] { MetadataReference.CreateFromFile(typeof(object).Assembly.Location) });
 
-        var generator = new Generator();
-        var driver = CSharpGeneratorDriver.Create(generator).RunGenerators(compilation);
+        Generator generator = new Generator();
+        GeneratorDriver driver = CSharpGeneratorDriver.Create(generator).RunGenerators(compilation);
 
         return Verify(driver);
     }

@@ -11,7 +11,7 @@ public class Executor
     [Benchmark]
     public void EnumerateForEach()
     {
-        foreach (var _ in Number.Enumerate())
+        foreach (Number? _ in Number.Enumerate())
         {
             // Do nothing.
         }

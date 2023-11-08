@@ -7,6 +7,7 @@ the marked class itself.
 An enumeration class cannot be nested or contain the `static` modifier.
 
 ### Example
+
 ```csharp
 [Enumeration]
 public partial class Number
