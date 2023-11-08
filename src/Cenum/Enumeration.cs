@@ -35,7 +35,7 @@ internal class Enumeration
             writer.Indent++;
         }
 
-        writer.WriteLine($"public partial class {_symbol.Name}");
+        writer.WriteLine($"{_symbol.DeclaredAccessibility.ToString().ToLowerInvariant()} partial class {_symbol.Name}");
         writer.WriteLine('{');
         writer.Indent++;
         writer.WriteLine($"public static global::System.Collections.Generic.IEnumerable<{_symbol.Name}> Enumerate()");

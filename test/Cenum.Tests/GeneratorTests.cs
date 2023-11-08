@@ -24,6 +24,14 @@ public class GeneratorTests
                }
                
                 [Enumeration]
+                internal partial class InternalEnumerationClass
+                {
+                    public static readonly InternalEnumerationClass One = new();
+                    public static readonly InternalEnumerationClass Two = new();
+                    public static readonly InternalEnumerationClass Three = new();
+                }
+               
+                [Enumeration]
                 public partial class EmptyEnumerationClass { }
                 
                 [Enumeration]
@@ -46,6 +54,14 @@ public class GeneratorTests
             public partial class GlobalEnumerationClass
             {
                 public static readonly GlobalEnumerationClass One = new();
+            }
+            
+            [Enumeration]
+            internal partial class InternalGlobalEnumerationClass
+            {
+                public static readonly InternalGlobalEnumerationClass One = new();
+                public static readonly InternalGlobalEnumerationClass Two = new();
+                public static readonly InternalGlobalEnumerationClass Three = new();
             }
             """);
 
