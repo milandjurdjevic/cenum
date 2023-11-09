@@ -1,5 +1,5 @@
 
-![logo](logo.png)
+![logo](logo.jpeg)
 
 ## Cenum - object oriented alternative to C# enum
 
