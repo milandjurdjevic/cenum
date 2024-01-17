@@ -1,5 +1,4 @@
-
-![logo](logo.jpeg)
+# Cenum
 
 ## Object oriented alternative to C# enum [![latest version](https://img.shields.io/nuget/v/cenum)](https://www.nuget.org/packages/cenum)
 
