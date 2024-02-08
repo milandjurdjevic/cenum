@@ -1,10 +1,8 @@
-### Usage
-
 The source generator will scan the source code for classes marked with the `[Enumeration]` attribute and then generate
 an `Enumerate()` method for them. The method will enumerate all `public static readonly` fields with the same type as
 the marked class itself.
 
-An enumeration class cannot be nested or contain the `static` modifier.
+An enumeration class cannot be nested or static.
 
 ### Example
 
