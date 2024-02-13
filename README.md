@@ -1,19 +1,18 @@
-# Cenum
+# Cenum [![latest version](https://img.shields.io/nuget/v/cenum)](https://www.nuget.org/packages/cenum)
 
-## Object oriented alternative to C# enum [![latest version](https://img.shields.io/nuget/v/cenum)](https://www.nuget.org/packages/cenum)
+### Object oriented alternative to C# enum
 
 Instead of being limited to a fixed set of integral values, imagine if enums were a fixed set of
 objects. They could have fields, properties and methods - just as other types do.
 The only difference would be that there would only ever be one instance for each value.
 
 ## Usage
+
 The source generator will scan the source code for classes marked with the `[Enumeration]` attribute and then generate
 an `Enumerate()` method for them. The method will enumerate all `public static readonly` fields with the same type as
 the marked class itself.
 
 An enumeration class cannot be nested or static.
-
-### Example
 
 ```csharp
 [Enumeration]
@@ -41,3 +40,6 @@ foreach (var number in Number.Enumerate())
 // 2
 // 3
 ```
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for more details.
