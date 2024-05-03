@@ -1,6 +1,9 @@
+using System.Diagnostics.CodeAnalysis;
+
 namespace Cenum.Benchmarks;
 
 [Enumeration]
+[SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
 public partial class Number
 {
     public static readonly Number One = new();

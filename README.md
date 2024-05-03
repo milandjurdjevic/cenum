@@ -1,6 +1,8 @@
 # Cenum [![latest version](https://img.shields.io/nuget/v/cenum)](https://www.nuget.org/packages/cenum)
 
-### Object oriented alternative to C# enum
+Object-oriented alternative to C# enum - base for defining enumerations as classes with fields, properties and methods.
+
+## Motivation
 
 Instead of being limited to a fixed set of integral values, imagine if enums were a fixed set of
 objects. They could have fields, properties and methods - just as other types do.
@@ -8,38 +10,31 @@ The only difference would be that there would only ever be one instance for each
 
 ## Usage
 
-The source generator will scan the source code for classes marked with the `[Enumeration]` attribute and then generate
-an `Enumerate()` method for them. The method will enumerate all `public static readonly` fields with the same type as
-the marked class itself.
+To lear more about the library usage, check the [documentation](src/Cenum/README.md#usage) link.
 
-An enumeration class cannot be nested or static.
+## Benchmark
 
-```csharp
-[Enumeration]
-public partial class Number
-{
-    public static readonly Number One = new(1);
-    public static readonly Number Two = new(2);
-    public static readonly Number Three = new(3);
-    
-    private readonly int _value;
-    
-    private Number(int value) => _value = value;
-    
-    public override string ToString() => _value.ToString();
-}
+_Enumerate with foreach loop over 10 enumeration values_
 
+| Method    |     Mean |    Error |   StdDev |   Gen0 | Allocated |
+|-----------|---------:|---------:|---------:|-------:|----------:|
+| Enumerate | 46.17 ns | 0.474 ns | 0.443 ns | 0.0051 |      32 B |
 
-foreach (var number in Number.Enumerate())
-{
-    Console.WriteLine(number.ToString());
-}
+### Legends
 
-// Output:
-// 1
-// 2
-// 3
-```
+- Mean: Arithmetic mean of all measurements
+- Error: Half of 99.9% confidence interval
+- StdDev: Standard deviation of all measurements
+- Gen0: GC Generation 0 collects per 1000 operations
+- Allocated: Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+- 1 ns: 1 Nanosecond (0.000000001 sec)
+
+### Device
+
+- Chip: Apple M1 Pro
+- Memory: 16 GB
+- OS: Sonoma 14.1.2
 
 ## License
+
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for more details.

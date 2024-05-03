@@ -9,11 +9,11 @@ namespace Cenum.Benchmarks;
 public class Executor
 {
     [Benchmark]
-    public void EnumerateForEach()
+    public void Enumerate()
     {
-        foreach (Number? _ in Number.Enumerate())
+        foreach (Number _ in Number.Enumerate())
         {
-            // Do nothing.
+            // Iterate over the enumeration just for the evaluation purpose.
         }
     }
 }

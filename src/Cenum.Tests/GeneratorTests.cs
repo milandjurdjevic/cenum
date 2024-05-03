@@ -10,6 +10,7 @@ public class GeneratorTests
     public Task GeneratesExpectedSourceCode()
     {
         SyntaxTree syntaxTree = CSharpSyntaxTree.ParseText(
+            // language=C#
             """
             using Cenum;
 
