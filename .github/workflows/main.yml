@@ -1,0 +1,48 @@
+name: main
+
+on:
+  push:
+    branches:
+      - 'main'
+    tags:
+      - '*.*.*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Restore
+        run: dotnet restore src
+      - name: Build
+        run: dotnet build src --no-restore
+      - name: Test
+        run: dotnet test src --no-build --verbosity normal
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.ref, 'refs/tags/v')
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Pack
+        run: dotnet pack src/Cenum --configuration Release --output ${{ github.workspace }}/.nuget
+      - name: Push
+        run: dotnet nuget push ${{ github.workspace }}/.nuget/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+      - name: Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Cenum ${{ github.ref }}
+          draft: false
+          prerelease: false
